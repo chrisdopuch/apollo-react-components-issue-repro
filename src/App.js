@@ -34,10 +34,13 @@ type HeroQueryVariables = {
   ...
 };
 
+type HeroQueryData = { hero: ?Hero, ... };
+
 class HeroQueryComp extends Query<
   { hero: ?Hero, ... },
   { episode: string, offset?: ?number, ... }
 > {}
+
 
 function App() {
   return (
