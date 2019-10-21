@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { type ComponentType, type ElementConfig } from 'react';
 import { Query } from '@apollo/react-components';
 import gql from 'graphql-tag';
 
@@ -36,10 +36,7 @@ type HeroQueryVariables = {
 
 type HeroQueryData = { hero: ?Hero, ... };
 
-class HeroQueryComp extends Query<
-  { hero: ?Hero, ... },
-  { episode: string, offset?: ?number, ... }
-> {}
+const HeroQueryComp = (Query: ComponentType<ElementConfig<Class<Query<HeroQueryData, HeroQueryVariables>>>>)
 
 
 function App() {
